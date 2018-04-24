@@ -1,6 +1,4 @@
-EE -> EE + T |
- EE - T
- |  T
-T -> T * F | T / F
+EE -> EE + T | EE - T |  T
+ T -> T * F |  T / F
 F -> ( EE ) | id
 T -> F
