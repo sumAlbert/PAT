@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00bf66d3-e3af-4f4a-9059-c742c5261976" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool/SortTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PAT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PAT.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PAT/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PAT/entity/Production.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/entity/Production.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PAT/handler/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/handler/FileHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PAT/handler/ProductionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/handler/ProductionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Production.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Production.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/handler/ProductionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/handler/ProductionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/test.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,12 +23,12 @@
     <SUITE FILE_PATH="coverage/PAT$Main.ic" NAME="Main Coverage Results" MODIFIED="1524636189609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="261">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,23 +36,42 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test2.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/txt/test2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ProductionHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+            <state relative-caret-position="15">
+              <caret line="178" column="5" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
               <folding>
                 <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
+                <element signature="method#addLine#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#removeLeftRecursive#0;class#ProductionHandler#0" />
+                <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
+                <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
+                <element signature="e#7797#7798#0" expanded="true" />
+                <element signature="e#7830#7831#0" expanded="true" />
+                <element signature="e#7886#7887#0" expanded="true" />
+                <element signature="e#7930#7931#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/txt/test.txt">
+      <file leaf-file-name="SortTool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tool/SortTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -68,7 +79,7 @@
       <file leaf-file-name="Production.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entity/Production.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="418">
               <caret line="111" column="55" selection-start-line="111" selection-start-column="55" selection-end-line="111" selection-end-column="55" />
               <folding>
                 <element signature="method#getSplitDerivation#0;class#Production#0" />
@@ -83,9 +94,18 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>currentUnstop</find>
+      <find>gener</find>
+      <find>generator</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,9 +114,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/txt/test.txt" />
         <option value="$PROJECT_DIR$/src/entity/Production.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/SortTool.java" />
+        <option value="$PROJECT_DIR$/src/tool/SortTool.java" />
         <option value="$PROJECT_DIR$/src/handler/ProductionHandler.java" />
       </list>
     </option>
@@ -122,6 +144,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,19 +160,12 @@
             <path>
               <item name="PAT" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PAT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PAT" type="462c0819:PsiDirectoryNode" />
               <item name="txt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -232,44 +248,45 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524636116371</updated>
-      <workItem from="1524636119243" duration="4065000" />
+      <workItem from="1524636119243" duration="4155000" />
+      <workItem from="1524644040014" duration="6063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4065000" />
+    <option name="totallyTimeSpent" value="10218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="757" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3287879" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.22312224" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496318" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3287879" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533137" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4318182" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.22312224" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -282,20 +299,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="33" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/txt/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="195">
           <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -303,9 +313,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Production.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="615">
           <caret line="111" column="55" selection-start-line="111" selection-start-column="55" selection-end-line="111" selection-end-column="55" />
           <folding>
             <element signature="method#getSplitDerivation#0;class#Production#0" />
@@ -319,10 +336,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+        <state relative-caret-position="1620">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
           <folding>
             <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
+            <element signature="method#addLine#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
+            <element signature="e#7797#7798#0" expanded="true" />
+            <element signature="e#7830#7831#0" expanded="true" />
+            <element signature="e#7886#7887#0" expanded="true" />
+            <element signature="e#7930#7931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Production.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="111" column="55" selection-start-line="111" selection-start-column="55" selection-end-line="111" selection-end-column="55" />
+          <folding>
+            <element signature="method#getSplitDerivation#0;class#Production#0" />
+            <element signature="method#getSplitSeparator#0;class#Production#0" />
+            <element signature="method#getArrGenerators#0;class#Production#0" />
+            <element signature="method#createStrGenerators#0;class#Production#0" />
+            <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tool/SortTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="178" column="5" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
+            <element signature="method#addLine#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
+            <element signature="e#7797#7798#0" expanded="true" />
+            <element signature="e#7830#7831#0" expanded="true" />
+            <element signature="e#7886#7887#0" expanded="true" />
+            <element signature="e#7930#7931#0" expanded="true" />
           </folding>
         </state>
       </provider>

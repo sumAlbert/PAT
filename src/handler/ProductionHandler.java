@@ -64,14 +64,14 @@ public class ProductionHandler {
                 String[] currentRightArr = currentRightItem.split(" ");
                 for(int j = 0; j < currentRightArr.length;j++){
                     String currentRightArrItem = currentRightArr[j];
-                    if(!unstopSymbols.contains(currentRightArrItem)){
+                    if(!unstopSymbols.contains(currentRightArrItem) && currentRightArrItem.length() != 0){
                         stopSymbols.add(currentRightArrItem);
                     }
                 }
-                List currentUnstopList = (List)generator.get(currentUnstop);
-                if(currentUnstopList != null){
+                List currentUnstopList = (List)generator.get(currentUnstop);//当前非终结符对应的表达式的集合
+                if(currentUnstopList != null && currentRightItem.length() != 0){
                     currentUnstopList.add(currentRightItem);
-                } else {
+                } else if(currentRightItem.length() != 0){
                     List<String> newUnstopList = new ArrayList();
                     newUnstopList.add(currentRightItem);
                     generator.put(currentUnstop,newUnstopList);
@@ -82,10 +82,14 @@ public class ProductionHandler {
         }
         return result;
     }
-
+    /**
+     * 消除左递归
+     * @return
+     */
     public boolean removeLeftRecursive(){
         boolean result = true;
         Map generatorsArr = this.production.getArrGenerators();
+        Map generators = this.production.getGenerators();
         Iterator iterator = generatorsArr.entrySet().iterator();
         while (iterator.hasNext()){
 
@@ -110,19 +114,99 @@ public class ProductionHandler {
             }
 
             //生成新的非终结符，并消除左递归
+            String nullSymbol = production.getNullSymbol();
             if(leftPart.size() != 0 && rightPart.size() != 0){
-                List<String[]> newValue1 = new ArrayList<>();
-                List<String[]> newValue2 = new ArrayList<>();
-
+                String newKey = production.getNewUnstopSymbol(key);
+                List<String> newValue1 = new ArrayList<>();//新非终结符的产生项
+                List<String> newValue2 = new ArrayList<>();//旧非终结符的产生项
+                for(int j = 0; j< leftPart.size(); j++){
+                    String[] currentItem = leftPart.get(j);
+                    String newItem = "";
+                    for(int k = 1; k< currentItem.length; k++){
+                        newItem = newItem.concat(currentItem[k]);
+                        newItem = newItem.concat(" ");
+                    }
+                    newItem = newItem.concat(newKey);
+                    newValue1.add(newItem);
+                }
+                newValue1.add(nullSymbol);
+                for(int j = 0; j < rightPart.size(); j++){
+                    String[] currentItem = rightPart.get(j);
+                    String newItem = "";
+                    for(int k = 0; k< currentItem.length; k++){
+                        newItem = newItem.concat(currentItem[k]);
+                        newItem = newItem.concat(" ");
+                    }
+                    newItem = newItem.concat(newKey);
+                    newValue2.add(newItem);
+                }
+                generators.put(key,newValue2);
+                generators.put(newKey,newValue1);
             } else if(leftPart.size() != 0 && rightPart.size() == 0){
                 result = false;
                 break;
             }
+        }
+        return result;
+    }
+    /**
+     * 提取左因子
+     * @return
+     */
+    public boolean promptCommonRefact(){
+        boolean result = false;
+        Map generatorsArr = this.production.getArrGenerators();
+        Stack<String> unstopSymbolActive = new Stack<>();
+        Stack<List> unstopItemsActive = new Stack<>();
 
+        //开始遍历已有的产生式
+        Iterator iterator = generatorsArr.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry entry = (Map.Entry) iterator.next();
+            String key = (String) entry.getKey();
+            List value = (List) entry.getValue();
+
+            //对value进行排序，每一项都是一个String[]
+            for(int i = 0; i < value.size() - 1; i++){
+                for(int j = 0; j < value.size() - 1 - i; j++){
+                    String[] currentStrings = (String[]) value.get(i + j);
+                    String[] nextStrings = (String[]) value.get(i + j + 1);
+
+                }
+            }
+        }
+        return result;
+    }
+    /**
+     * 比较两个字符串数组
+     * @param strs1
+     * @param strs2
+     * @return
+     */
+    public int compareForStrings(String[] strs1,String[] strs2){
+        int result = 0;
+        int i = 0;
+        while(result == 0){
+            String str1 = strs1[i];
+            String str2 = strs2[i];
+            if(str1 == null && str2 != null){
+                result = -1;
+            } else if(str1 != null && str2 == null){
+                result = 1;
+            } else if(str1 != null && str2 != null){
+                result = str1.compareTo(str2);
+            } else {
+                break;
+            }
+            i++;
         }
         return result;
     }
 
+
+
+
+    //getter && setter
     public Production getProduction() {
         return production;
     }

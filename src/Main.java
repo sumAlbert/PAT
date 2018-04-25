@@ -11,7 +11,7 @@ public class Main {
         boolean resultFlag = true;
 
         //读入产生式字符串，并做预处理以提供语法分析使用
-        List originLines = FileHandler.readFileToList("./txt/test.txt");
+        List originLines = FileHandler.readFileToList("./txt/test2.txt");
         ProductionHandler productionHandler = new ProductionHandler();
         for(int i = 0; i < originLines.size(); i++){
             String currentOriginLine = (String) originLines.get(i);
@@ -23,7 +23,14 @@ public class Main {
         }
 
         //消除左递归
-        productionHandler.removeLeftRecursive();
+        resultFlag = productionHandler.removeLeftRecursive();
+        if(!resultFlag){
+            System.out.println("消除左递归阶段存在错误");
+            return ;
+        }
+
+        //提取公因子
+        resultFlag = productionHandler.promptCommonRefact();
 
         System.out.print("yes");
     }
