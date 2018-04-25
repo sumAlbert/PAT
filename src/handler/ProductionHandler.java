@@ -2,10 +2,7 @@ package handler;
 
 import entity.Production;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class ProductionHandler {
@@ -13,6 +10,12 @@ public class ProductionHandler {
     private static final int ONLYONE = 1;
     private static final int TWOPARTS = 2;
 
+
+    /**
+     * 给当前的production添加一行产生式
+     * @param line
+     * @return
+     */
     public boolean addLine(String line){
         boolean result = true;
         //原始行预处理到标准行
@@ -40,8 +43,10 @@ public class ProductionHandler {
                 stopSymbols.remove(leftPartStr);
             }
             unstopSymbols.add(leftPartStr);
+            production.setCurrentUnstop(leftPartStr);
             currentUnstop = leftPartStr;
         } else if (lineArr.length == ONLYONE){
+
             rightPartStr = lineArr[0];
         } else {
             result = false;
@@ -76,5 +81,53 @@ public class ProductionHandler {
             result = false;
         }
         return result;
+    }
+
+    public boolean removeLeftRecursive(){
+        boolean result = true;
+        Map generatorsArr = this.production.getArrGenerators();
+        Iterator iterator = generatorsArr.entrySet().iterator();
+        while (iterator.hasNext()){
+
+            //将产生式右边表达式的集合划分为左递归和非左递归的两部分
+            List<String[]> leftPart = new ArrayList<>();
+            List<String[]> rightPart = new ArrayList<>();
+            Map.Entry entry = (Map.Entry) iterator.next();
+            String key = (String)entry.getKey();
+            List value = (List)entry.getValue();
+            //遍历非终结符号每个右边的项
+            for(int i = 0; i < value.size(); i++){
+                String[] currentValues = (String[]) value.get(i);
+                String firstSymbol = currentValues[0];
+                if(firstSymbol.equals(key) && currentValues.length > 1){
+                    leftPart.add(currentValues);
+                } else if(firstSymbol.equals(key) && currentValues.length == 1){
+                    result = false;
+                    break;
+                } else {
+                    rightPart.add(currentValues);
+                }
+            }
+
+            //生成新的非终结符，并消除左递归
+            if(leftPart.size() != 0 && rightPart.size() != 0){
+                List<String[]> newValue1 = new ArrayList<>();
+                List<String[]> newValue2 = new ArrayList<>();
+
+            } else if(leftPart.size() != 0 && rightPart.size() == 0){
+                result = false;
+                break;
+            }
+
+        }
+        return result;
+    }
+
+    public Production getProduction() {
+        return production;
+    }
+
+    public void setProduction(Production production) {
+        this.production = production;
     }
 }

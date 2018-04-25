@@ -10,6 +10,7 @@ public class Production {
     private String separateSymbol = "|";
     private String startSymbol = "";
     private String currentUnstop = "";
+    private String nullSymbol = "e";
 
     public Map<String, List> getGenerators() {
         return generators;
@@ -31,6 +32,9 @@ public class Production {
     }
     public String getCurrentUnstop() {
         return currentUnstop;
+    }
+    public String getNullSymbol() {
+        return nullSymbol;
     }
 
     public void setDerivationSymbol(String derivationSymbol) {
@@ -54,7 +58,11 @@ public class Production {
     public void setCurrentUnstop(String currentUnstop) {
         this.currentUnstop = currentUnstop;
     }
+    public void setNullSymbol(String nullSymbol) {
+        this.nullSymbol = nullSymbol;
+    }
 
+    //将分隔号和推到号转换成可以split的格式
     public String getSplitDerivation (){
         String result = this.derivationSymbol;
         if(result.equals(".")){
@@ -76,5 +84,36 @@ public class Production {
             result = "\\\\";
         }
         return result;
+    }
+
+    //将产生式变成数组形式
+    public Map getArrGenerators (){
+        Map<String,List> result = new HashMap<>();
+        Iterator iterator = this.generators.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry entry = (Map.Entry) iterator.next();
+            String key = (String) entry.getKey();
+            List value = (List) entry.getValue();
+            List<String[]> newValue = new ArrayList<>();
+            for(int i = 0; i < value.size(); i++){
+                String[] currentSubValues = ((String) value.get(i)).split(" ");
+                newValue.add(currentSubValues);
+            }
+            result.put(key,newValue);
+        }
+        return result;
+    }
+    //通过数组产生式变成字符号产生式
+    public Map createStrGenerators (Map arrGenerators){
+        Map<String,List> result = new HashMap<>();
+        return result;
+    }
+    //得到不重复的新的非终结符号
+    public String getNewUnstopSymbol (String oldSymbol){
+        String newSymbol = oldSymbol;
+        while(stopSymbols.contains(newSymbol)||(unstopSymbols.contains(newSymbol))){
+            newSymbol = newSymbol.concat("'");
+        }
+        return newSymbol;
     }
 }
