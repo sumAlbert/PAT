@@ -31,7 +31,10 @@ public class Main {
 
         //提取公因子
         resultFlag = productionHandler.promptCommonRefact();
-
+        if(!resultFlag){
+            System.out.println("提取公因子阶段存在错误");
+            return ;
+        }
         System.out.print("yes");
     }
 }

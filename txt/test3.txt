@@ -7,6 +7,6 @@ A -> 1 2 3|
 0 1 2 3 |
 0 1 2 4 |
 S -> i E t S |
-i E t S e S'
-| a
+i E t S m S
+| a x
 E -> b

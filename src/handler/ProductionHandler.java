@@ -154,11 +154,12 @@ public class ProductionHandler {
      * @return
      */
     public boolean promptCommonRefact(){
-        boolean result = false;
+        boolean result = true;
         Map generatorsArr = this.production.getArrGenerators();
-        String separateSymbol= this.production.getSeparateSymbol();
-        List<Integer> diffInStrings = new ArrayList<>();
-        Map<String,List> newGenerators = new HashMap<>();
+        String nullSymbol = this.production.getNullSymbol();//空字符
+        List<Integer> diffInStrings = new ArrayList<>();//差值集合
+        Map<String,List> newGenerators = new HashMap<>();//新的产生式集合
+        Set unstopSymbols = this.production.getUnstopSymbols();//非终结符号
         List<String> unstopSymbolActive = new ArrayList<>();
         List<String[]> unstopItemsActive = new ArrayList<>();
 
@@ -193,7 +194,81 @@ public class ProductionHandler {
             unstopItemsActive.add((String[])value.get(value.size() -1));
             unstopSymbolActive.add(key);
         }
-        System.out.print("test");
+
+        //获取新的产生式集合
+        int startIndex = 0;
+        int endIndex = diffInStrings.size();
+        while(startIndex != endIndex) {
+            Integer currentDiff = diffInStrings.get(startIndex);
+            int minDiff = Integer.MAX_VALUE;
+            int setNum = 0;
+            //取出可以合并的集合
+            String currentKey = unstopSymbolActive.get(startIndex);
+            while(currentDiff != null){
+                if(currentDiff < minDiff && currentDiff > 0){
+                    minDiff = currentDiff;
+                }
+                setNum++;
+                startIndex++;
+                if(currentDiff <= 0) {
+                    break;
+                }
+                currentDiff = diffInStrings.get(startIndex);
+            }
+            //对集合进行合并(集合内只有一个值的时候，直接创建产生式放入集合)
+            if(setNum > 1) {
+                int setStart = startIndex - setNum;
+                String newKey = this.production.getNewUnstopSymbol(currentKey);
+                unstopSymbols.add(newKey);
+                String newValue = "";
+                for (int i = 0; i < minDiff; i++) {
+                    newValue = newValue.concat(unstopItemsActive.get(setStart)[i]);
+                    newValue = newValue.concat(" ");
+                }
+                newValue = newValue.concat(newKey);
+                List generatorValue = newGenerators.get(currentKey);
+                if (generatorValue == null) {
+                    generatorValue = new ArrayList<String>();
+                }
+                generatorValue.add(newValue);
+                newGenerators.put(currentKey, generatorValue);
+                //产生新的活动集合
+                for (int i = startIndex - setNum; i < startIndex; i++) {
+                    String[] oldUnstopItemsActive = unstopItemsActive.get(i);
+                    String[] newUnstopItemsActive;
+                    if(oldUnstopItemsActive.length <= minDiff) {
+                        newUnstopItemsActive = new String[1];
+                        newUnstopItemsActive[0] = nullSymbol;
+                    }
+                    else {
+                        newUnstopItemsActive = new String[oldUnstopItemsActive.length - minDiff];
+                        for(int j = 0; j < oldUnstopItemsActive.length - minDiff; j++) {
+                            newUnstopItemsActive[j] = oldUnstopItemsActive[minDiff + j];
+                        }
+                    }
+                    unstopItemsActive.add(newUnstopItemsActive);
+                    diffInStrings.add(diffInStrings.get(i) - minDiff);
+                    unstopSymbolActive.add(newKey);
+                    endIndex++;
+                }
+            } else {//集合内只有一个值的时候
+                int setStart = startIndex - setNum;
+                String newValue = "";
+                for (int i = 0; i < unstopItemsActive.get(setStart).length; i++) {
+                    if(i != 0) {
+                        newValue = newValue.concat(" ");
+                    }
+                    newValue = newValue.concat(unstopItemsActive.get(setStart)[i]);
+                }
+                List generatorValue = newGenerators.get(currentKey);
+                if (generatorValue == null) {
+                    generatorValue = new ArrayList<String>();
+                }
+                generatorValue.add(newValue);
+                newGenerators.put(currentKey, generatorValue);
+            }
+        }
+        this.production.setGenerators(newGenerators);
         return result;
     }
     /**
