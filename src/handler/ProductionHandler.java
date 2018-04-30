@@ -156,8 +156,11 @@ public class ProductionHandler {
     public boolean promptCommonRefact(){
         boolean result = false;
         Map generatorsArr = this.production.getArrGenerators();
-        Stack<String> unstopSymbolActive = new Stack<>();
-        Stack<List> unstopItemsActive = new Stack<>();
+        String separateSymbol= this.production.getSeparateSymbol();
+        List<Integer> diffInStrings = new ArrayList<>();
+        Map<String,List> newGenerators = new HashMap<>();
+        List<String> unstopSymbolActive = new ArrayList<>();
+        List<String[]> unstopItemsActive = new ArrayList<>();
 
         //开始遍历已有的产生式
         Iterator iterator = generatorsArr.entrySet().iterator();
@@ -166,15 +169,31 @@ public class ProductionHandler {
             String key = (String) entry.getKey();
             List value = (List) entry.getValue();
 
-            //对value进行排序，每一项都是一个String[]
+            //对value进行排序，每一项都是一个String[],(冒泡排序)
             for(int i = 0; i < value.size() - 1; i++){
                 for(int j = 0; j < value.size() - 1 - i; j++){
-                    String[] currentStrings = (String[]) value.get(i + j);
-                    String[] nextStrings = (String[]) value.get(i + j + 1);
-
+                    String[] currentStrings = (String[]) value.get(j);
+                    String[] nextStrings = (String[]) value.get(j + 1);
+                    if(compareForStrings(currentStrings,nextStrings) > 0){
+                        value.set(j, nextStrings);
+                        value.set(j + 1, currentStrings);
+                    }
                 }
             }
+
+            //遍历value获取相邻两个差值
+            for(int i = 0; i < value.size() - 1; i++){
+                String[] currentStrings = (String[]) value.get(i);
+                String[] nextStrings = (String[]) value.get(i + 1);
+                diffInStrings.add(commonLenForStrings(currentStrings,nextStrings));
+                unstopSymbolActive.add(key);
+                unstopItemsActive.add(currentStrings);
+            }
+            diffInStrings.add(-1);
+            unstopItemsActive.add((String[])value.get(value.size() -1));
+            unstopSymbolActive.add(key);
         }
+        System.out.print("test");
         return result;
     }
     /**
@@ -183,17 +202,17 @@ public class ProductionHandler {
      * @param strs2
      * @return
      */
-    public int compareForStrings(String[] strs1,String[] strs2){
+    private int compareForStrings(String[] strs1,String[] strs2){
         int result = 0;
         int i = 0;
         while(result == 0){
-            String str1 = strs1[i];
-            String str2 = strs2[i];
-            if(str1 == null && str2 != null){
+            if(i >= strs1.length && i < strs2.length){
                 result = -1;
-            } else if(str1 != null && str2 == null){
+            } else if(i < strs1.length && i >= strs2.length){
                 result = 1;
-            } else if(str1 != null && str2 != null){
+            } else if(i < strs1.length && i < strs2.length){
+                String str1 = strs1[i];
+                String str2 = strs2[i];
                 result = str1.compareTo(str2);
             } else {
                 break;
@@ -202,7 +221,23 @@ public class ProductionHandler {
         }
         return result;
     }
-
+    /**
+     * 获取String[]共有长度
+     * @param strs1
+     * @param strs2
+     * @return
+     */
+    private Integer commonLenForStrings(String[] strs1,String[] strs2){
+        int i = 0;
+        while(i < strs1.length && i < strs2.length) {
+            if(!strs1[i].equals(strs2[i])){
+                break;
+            }
+            i++;
+        }
+        Integer result = new Integer(i);
+        return result;
+    }
 
 
 
