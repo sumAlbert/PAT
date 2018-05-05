@@ -17,6 +17,7 @@ public class Production {
     private String currentUnstop = "";
     private String nullSymbol = "e";
     private String endFlag = "$";
+    private String againSymbol = ",";
 
     public Map<String, List> getGenerators() {
         return generators;
@@ -54,6 +55,9 @@ public class Production {
     public PredictTable getPredictTable() {
         return predictTable;
     }
+    public String getAgainSymbol() {
+        return againSymbol;
+    }
 
     public void setDerivationSymbol(String derivationSymbol) {
         this.derivationSymbol = derivationSymbol;
@@ -90,6 +94,9 @@ public class Production {
     }
     public void setPredictTable(PredictTable predictTable) {
         this.predictTable = predictTable;
+    }
+    public void setAgainSymbol(String againSymbol) {
+        this.againSymbol = againSymbol;
     }
 
     //将分隔号和推到号转换成可以split的格式

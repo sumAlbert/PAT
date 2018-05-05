@@ -374,6 +374,17 @@ public class ProductionHandler {
         this.production.setPredictTable(predictTable);
         return result;
     }
+    /**
+     * 输出分析预测表
+     * @return
+     */
+    public List printPredictTable() {
+        Set stopSymbols = this.production.getStopSymbols();
+        String endFlag = this.production.getEndFlag();
+        String againSymbol = this.production.getAgainSymbol();
+        String derivationSymbol = this.production.getDerivationSymbol();
+        return this.production.getPredictTable().print(stopSymbols, endFlag, againSymbol, derivationSymbol);
+    }
 
     /**
      * 递归获取followSet
@@ -537,7 +548,6 @@ public class ProductionHandler {
         Integer result = new Integer(i);
         return result;
     }
-
 
 
     //getter && setter

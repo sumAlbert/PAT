@@ -57,7 +57,10 @@ public class Main {
             return ;
         }
 
+        //获取分析预测表的字符串
+        List resultStrs = productionHandler.printPredictTable();
 
-        System.out.print("yes");
+        //打印列表
+        FileHandler.writeListToFile("./txt/result1.txt",resultStrs,productionHandler.getProduction().getSeparateSymbol());
     }
 }
