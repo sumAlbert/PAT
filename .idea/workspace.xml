@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="00bf66d3-e3af-4f4a-9059-c742c5261976" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PAT/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PAT/entity/Production.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/entity/Production.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PAT/handler/ProductionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PAT/handler/ProductionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/PredictTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PredictTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Production.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Production.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/handler/ProductionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/handler/ProductionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/test3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/test3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/test2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/test4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/test4.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,15 +22,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PAT$Main.ic" NAME="Main Coverage Results" MODIFIED="1524636189609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PAT$Main.ic" NAME="Main Coverage Results" MODIFIED="1525168242519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+            <state relative-caret-position="765">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,26 +41,17 @@
       <file leaf-file-name="test2.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/txt/test2.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            <state relative-caret-position="15">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test3.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/txt/test3.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductionHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductionHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+            <state relative-caret-position="315">
+              <caret line="375" column="5" lean-forward="true" selection-start-line="375" selection-start-column="5" selection-end-line="375" selection-end-column="5" />
               <folding>
                 <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
                 <element signature="method#addLine#0;class#ProductionHandler#0" />
@@ -62,30 +59,20 @@
                 <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
                 <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
                 <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#obtainFirstSet#0;class#ProductionHandler#0" />
+                <element signature="method#obtainFirstSet#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#obtainFollowSet#0;class#ProductionHandler#0" />
+                <element signature="method#obtainFollowSet#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#obtainPredictTable#0;class#ProductionHandler#0" />
+                <element signature="method#obtainPredictTable#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#recursiveFollowSet#0;class#ProductionHandler#0" />
+                <element signature="method#recursiveFollowSet#0;class#ProductionHandler#0" />
+                <element signature="docComment;method#recursiveFirstSet#0;class#ProductionHandler#0" />
+                <element signature="method#recursiveFirstSet#0;class#ProductionHandler#0" />
                 <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
                 <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
                 <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
                 <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
-                <element signature="e#11896#11897#0" expanded="true" />
-                <element signature="e#11929#11930#0" expanded="true" />
-                <element signature="e#11985#11986#0" expanded="true" />
-                <element signature="e#12029#12030#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Production.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entity/Production.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-              <folding>
-                <element signature="method#getSplitDerivation#0;class#Production#0" />
-                <element signature="method#getSplitSeparator#0;class#Production#0" />
-                <element signature="method#getArrGenerators#0;class#Production#0" />
-                <element signature="method#createStrGenerators#0;class#Production#0" />
-                <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
               </folding>
             </state>
           </provider>
@@ -107,6 +94,11 @@
       <find>generator</find>
       <find>getNewUnstopSymbol</find>
       <find>newKey</find>
+      <find>recursiveFirstSet</find>
+      <find>result</find>
+      <find>currentSet</find>
+      <find>firs</find>
+      <find>remove(nullSymbol)</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,12 +108,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/txt/test.txt" />
-        <option value="$PROJECT_DIR$/src/entity/Production.java" />
         <option value="$PROJECT_DIR$/src/SortTool.java" />
         <option value="$PROJECT_DIR$/src/tool/SortTool.java" />
         <option value="$PROJECT_DIR$/txt/test3.txt" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/txt/test4.txt" />
+        <option value="$PROJECT_DIR$/src/entity/PredictTable.java" />
         <option value="$PROJECT_DIR$/src/handler/ProductionHandler.java" />
+        <option value="$PROJECT_DIR$/src/entity/Production.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/txt/test2.txt" />
       </list>
     </option>
   </component>
@@ -134,19 +129,19 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="20" />
-    <option name="y" value="29" />
-    <option name="width" value="1890" />
-    <option name="height" value="970" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,6 +158,12 @@
               <item name="PAT" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAT" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -174,7 +175,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -259,16 +259,16 @@
       <workItem from="1524636119243" duration="4155000" />
       <workItem from="1524644040014" duration="6119000" />
       <workItem from="1525055483550" duration="5504000" />
-      <workItem from="1525072460463" duration="8052000" />
+      <workItem from="1525072460463" duration="8157000" />
+      <workItem from="1525137663106" duration="27370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23830000" />
+    <option name="totallyTimeSpent" value="51305000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -280,19 +280,19 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32789317" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.25315005" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3265074" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.222341" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.25285715" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.57285714" />
-      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.22312224" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5285714" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -312,15 +312,83 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>37</line>
+          <line>60</line>
           <properties />
-          <option name="timeStamp" value="72" />
+          <option name="timeStamp" value="166" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="169" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+          <folding>
+            <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
+            <element signature="method#addLine#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
+            <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
+            <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Production.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getSplitDerivation#0;class#Production#0" />
+            <element signature="method#getSplitSeparator#0;class#Production#0" />
+            <element signature="method#getReverseIndex#0;class#Production#0" />
+            <element signature="method#getArrGenerators#0;class#Production#0" />
+            <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -350,10 +418,11 @@
         <state relative-caret-position="105">
           <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-end-line="8" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#getSplitDerivation#0;class#Production#0" />
             <element signature="method#getSplitSeparator#0;class#Production#0" />
+            <element signature="method#getReverseIndex#0;class#Production#0" />
             <element signature="method#getArrGenerators#0;class#Production#0" />
-            <element signature="method#createStrGenerators#0;class#Production#0" />
             <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
           </folding>
         </state>
@@ -370,14 +439,20 @@
             <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
             <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
             <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFirstSet#0;class#ProductionHandler#0" />
             <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
             <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
             <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
             <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
-            <element signature="e#11896#11897#0" expanded="true" />
-            <element signature="e#11929#11930#0" expanded="true" />
-            <element signature="e#11985#11986#0" expanded="true" />
-            <element signature="e#12029#12030#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -410,14 +485,20 @@
             <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
             <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
             <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFirstSet#0;class#ProductionHandler#0" />
             <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
             <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
             <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
             <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
-            <element signature="e#11896#11897#0" expanded="true" />
-            <element signature="e#11929#11930#0" expanded="true" />
-            <element signature="e#11985#11986#0" expanded="true" />
-            <element signature="e#12029#12030#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -427,10 +508,11 @@
         <state relative-caret-position="615">
           <caret line="111" column="55" selection-start-line="111" selection-start-column="55" selection-end-line="111" selection-end-column="55" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#getSplitDerivation#0;class#Production#0" />
             <element signature="method#getSplitSeparator#0;class#Production#0" />
+            <element signature="method#getReverseIndex#0;class#Production#0" />
             <element signature="method#getArrGenerators#0;class#Production#0" />
-            <element signature="method#createStrGenerators#0;class#Production#0" />
             <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
           </folding>
         </state>
@@ -465,10 +547,11 @@
         <state relative-caret-position="615">
           <caret line="111" column="55" selection-start-line="111" selection-start-column="55" selection-end-line="111" selection-end-column="55" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#getSplitDerivation#0;class#Production#0" />
             <element signature="method#getSplitSeparator#0;class#Production#0" />
+            <element signature="method#getReverseIndex#0;class#Production#0" />
             <element signature="method#getArrGenerators#0;class#Production#0" />
-            <element signature="method#createStrGenerators#0;class#Production#0" />
             <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
           </folding>
         </state>
@@ -485,22 +568,21 @@
             <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
             <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
             <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFirstSet#0;class#ProductionHandler#0" />
             <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
             <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
             <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
             <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
-            <element signature="e#11896#11897#0" expanded="true" />
-            <element signature="e#11929#11930#0" expanded="true" />
-            <element signature="e#11985#11986#0" expanded="true" />
-            <element signature="e#12029#12030#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/txt/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -511,40 +593,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Production.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        <state relative-caret-position="252">
+          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#getSplitDerivation#0;class#Production#0" />
             <element signature="method#getSplitSeparator#0;class#Production#0" />
+            <element signature="method#getReverseIndex#0;class#Production#0" />
             <element signature="method#getArrGenerators#0;class#Production#0" />
-            <element signature="method#createStrGenerators#0;class#Production#0" />
             <element signature="method#getNewUnstopSymbol#0;class#Production#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+        <state relative-caret-position="183">
+          <caret line="556" selection-start-line="556" selection-end-line="556" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/PredictTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding>
-            <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
-            <element signature="method#addLine#0;class#ProductionHandler#0" />
-            <element signature="docComment;method#removeLeftRecursive#0;class#ProductionHandler#0" />
-            <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
-            <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
-            <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
-            <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
-            <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
-            <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
-            <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
-            <element signature="e#11896#11897#0" expanded="true" />
-            <element signature="e#11929#11930#0" expanded="true" />
-            <element signature="e#11985#11986#0" expanded="true" />
-            <element signature="e#12029#12030#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#insertPair#0;class#PredictTable#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txt/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -555,19 +647,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/txt/test2.txt">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="765">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/txt/test2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        <state relative-caret-position="15">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/handler/ProductionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="375" column="5" lean-forward="true" selection-start-line="375" selection-start-column="5" selection-end-line="375" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#addLine#0;class#ProductionHandler#0" />
+            <element signature="method#addLine#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="method#removeLeftRecursive#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="method#promptCommonRefact#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#obtainFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="method#obtainPredictTable#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFollowSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="method#recursiveFirstSet#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#compareForStrings#0;class#ProductionHandler#0" />
+            <element signature="method#compareForStrings#0;class#ProductionHandler#0" />
+            <element signature="docComment;method#commonLenForStrings#0;class#ProductionHandler#0" />
+            <element signature="method#commonLenForStrings#0;class#ProductionHandler#0" />
           </folding>
         </state>
       </provider>

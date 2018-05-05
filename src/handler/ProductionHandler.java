@@ -1,6 +1,8 @@
 package handler;
 
+import entity.PredictTable;
 import entity.Production;
+import javafx.util.Pair;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -88,6 +90,7 @@ public class ProductionHandler {
      */
     public boolean removeLeftRecursive(){
         boolean result = true;
+        Set unstopSymbols = this.production.getUnstopSymbols();
         Map generatorsArr = this.production.getArrGenerators();
         Map generators = this.production.getGenerators();
         Iterator iterator = generatorsArr.entrySet().iterator();
@@ -117,6 +120,7 @@ public class ProductionHandler {
             String nullSymbol = production.getNullSymbol();
             if(leftPart.size() != 0 && rightPart.size() != 0){
                 String newKey = production.getNewUnstopSymbol(key);
+                unstopSymbols.add(newKey);
                 List<String> newValue1 = new ArrayList<>();//新非终结符的产生项
                 List<String> newValue2 = new ArrayList<>();//旧非终结符的产生项
                 for(int j = 0; j< leftPart.size(); j++){
@@ -269,6 +273,226 @@ public class ProductionHandler {
             }
         }
         this.production.setGenerators(newGenerators);
+        return result;
+    }
+    /**
+     * 获取左集合
+     * @return
+     */
+    public boolean obtainFirstSet() {
+        boolean result = true;
+        Map<String,Set> firstSets = new HashMap();
+        Set stopSymbols= this.production.getStopSymbols();
+        Set upStopSymbols = this.production.getUnstopSymbols();
+        String nullSymbol = this.production.getNullSymbol();
+        //处理空字
+        recursiveFirstSet(nullSymbol,firstSets);
+
+        //处理终结符号
+        Iterator iterator = stopSymbols.iterator();
+        while (iterator.hasNext()) {
+            String key = (String) iterator.next();
+            recursiveFirstSet(key,firstSets);
+        }
+
+        //处理非终结符号
+        iterator = upStopSymbols.iterator();
+        while (iterator.hasNext()) {
+            String key = (String) iterator.next();
+            recursiveFirstSet(key,firstSets);
+        }
+        this.production.setFirstSet(firstSets);
+        return result;
+    }
+    /**
+     * 获取followSet
+     * @return
+     */
+    public boolean obtainFollowSet() {
+        boolean result = true;
+        Map<String,Set> followSets = new HashMap();
+        Set avoidOutStack = new HashSet();
+        Set unstopSymbols = this.production.getUnstopSymbols();
+        Iterator iterator = unstopSymbols.iterator();
+        while (iterator.hasNext()) {
+            String entry = (String) iterator.next();
+            recursiveFollowSet(entry,followSets,avoidOutStack);
+        }
+        this.production.setFollowSet(followSets);
+        return result;
+    }
+    /**
+     * 获取分析预测表
+     * @return
+     */
+    public boolean obtainPredictTable() {
+        boolean result = true;
+        Map generatorArr = this.production.getArrGenerators();
+        String nullSymbol = this.production.getNullSymbol();
+        String endFlag = this.production.getEndFlag();
+        PredictTable predictTable = new PredictTable();
+        Set stopSymbols = this.production.getStopSymbols();
+        Map firstSets = this.production.getFirstSet();
+        Map followSets = this.production.getFollowSet();
+        Iterator iterator = generatorArr.entrySet().iterator();
+        while(iterator.hasNext()) {//遍历每个非终结符的产生式
+            Map.Entry entry = (Map.Entry) iterator.next();
+            String key = (String) entry.getKey();
+            List value = (List) entry.getValue();
+            for(int i = 0; i < value.size(); i++) {//遍历每个产生式
+                boolean followFlag = false;
+                String[] items = (String[]) value.get(i);
+                for(int j = 0; j < items.length; j++) {
+                    String currentItem = items[j];
+                    Set firstSet = (Set) firstSets.get(currentItem);
+                    Iterator iteratorSet = firstSet.iterator();
+                    while(iteratorSet.hasNext()) {//遍历first集合
+                        String key2 = (String) iteratorSet.next();
+                        if(stopSymbols.contains(key2)) {
+                            predictTable.insert(key,key2,key,items);
+                        }
+                        if(key2.equals(nullSymbol)) {//存在'空'
+                            followFlag = true;
+                        }
+                    }
+                    //基于follow
+                    if(followFlag) {
+                        Set followSet = (Set) followSets.get(key);
+                        iteratorSet = followSet.iterator();
+                        while (iteratorSet.hasNext()) {
+                            String key2 = (String) iteratorSet.next();
+                            if(stopSymbols.contains(key2) || key2.equals(endFlag)) {
+                                predictTable.insert(key,key2,key,items);
+                            }
+                        }
+                        continue;
+                    }
+                    break;
+                }
+            }
+        }
+        this.production.setPredictTable(predictTable);
+        return result;
+    }
+
+    /**
+     * 递归获取followSet
+     * @param key
+     * @param followSets
+     * @return
+     */
+    private Set recursiveFollowSet(String key,Map followSets,Set avoidOutStack) {
+        if(avoidOutStack.contains(key)) {
+            return new HashSet();
+        }
+        avoidOutStack.add(key);
+        Set result = new HashSet();
+        String startSymbol = this.production.getStartSymbol();
+        String nullSymbol = this.production.getNullSymbol();
+        String endFlag = this.production.getEndFlag();
+        Map firstSets = this.production.getFirstSet();
+
+        //插入结束标志
+        if(key.equals(startSymbol)) {
+            Set followSet = (Set) followSets.get(key);
+            if(followSet == null) {
+                followSet = new HashSet();
+                followSet.add(endFlag);
+                followSets.put(key, followSet);
+            }
+        }
+
+        //基于倒排索引后的产生式生成相应的followSet
+        Map reverseIndex = this.production.getReverseIndex();
+        List currentList = (List) reverseIndex.get(key);
+        if(currentList != null) {
+            for(int i = 0; i < currentList.size(); i++) {
+                Pair currentGenerator = (Pair) currentList.get(i);
+                String[] currentValue = (String[]) currentGenerator.getValue();
+                String currentKey = (String) currentGenerator.getKey();
+                for(int j = 0; j < currentValue.length; j++) {
+                    String currentItem = currentValue[j];
+                    if(currentItem.equals(key)) {
+                        Set currentSet = (Set) followSets.get(currentItem);
+                        if(currentSet == null) {
+                            currentSet = new HashSet();
+                            followSets.put(currentItem,currentSet);
+                        }
+
+                        //后面仍然存在值
+                        if(j != currentValue.length - 1) {
+                            //基于first
+                            String nextItem = currentValue[j+1];
+                            Set waitAddSet = (Set) firstSets.get(nextItem);
+                            if(waitAddSet.contains(nullSymbol) && !currentItem.equals(currentKey)) {
+                                Set waitAddSet2 = recursiveFollowSet(currentKey,followSets,avoidOutStack);
+                                currentSet.addAll(waitAddSet2);
+                            }
+                            Set tempSet = new HashSet();
+                            tempSet.addAll(waitAddSet);
+                            tempSet.remove(nullSymbol);
+                            currentSet.addAll(tempSet);
+                        }
+
+                        //后面不存在值
+                        if(j == currentValue.length - 1 && !currentItem.equals(currentKey)) {
+                            Set waitAddSet2 = recursiveFollowSet(currentKey,followSets,avoidOutStack);
+                            currentSet.addAll(waitAddSet2);
+                        }
+                    }
+                }
+            }
+        }
+        result = (Set) followSets.get(key);
+        avoidOutStack.remove(key);
+        return result;
+    }
+    /**
+     * 递归申城firstSet
+     * @param key
+     * @param firstSets
+     * @return
+     */
+    private Set recursiveFirstSet(String key,Map firstSets) {
+        Set result = null;
+        Set stopSymbols= this.production.getStopSymbols();
+        String nullSymbol = this.production.getNullSymbol();
+        if(stopSymbols.contains(key) || key.equals(nullSymbol)) {
+            Set keySet = (Set) firstSets.get(key);
+            if(keySet == null) {
+                keySet = new HashSet();
+                firstSets.put(key,keySet);
+            }
+            keySet.add(key);
+            result = keySet;
+        }
+        else {
+            Map generatorsArr = this.production.getArrGenerators();
+            List value = (List) generatorsArr.get(key);
+            Set keySet = (Set) firstSets.get(key);
+            if(keySet == null) {
+                keySet = new HashSet();
+                firstSets.put(key,keySet);
+            }
+            //遍历产生式右边的每一项
+            for(int i = 0; i < value.size(); i++) {
+                String[] currentValue = (String[]) value.get(i);
+                String currentStr = currentValue[0];
+                Set currentSet = recursiveFirstSet(currentStr,firstSets);
+                keySet.addAll(currentSet);
+                for(int j = 1; j < currentValue.length; j++) {
+                    if(currentSet.contains(nullSymbol)) {
+                        currentStr = currentValue[j];
+                        currentSet = recursiveFirstSet(currentStr,firstSets);
+                        keySet.addAll(currentSet);
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            result = keySet;
+        }
         return result;
     }
     /**
